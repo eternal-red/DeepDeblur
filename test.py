@@ -13,6 +13,7 @@ import cv2
 from keras.models import Model
 from keras.layers import Input
 
+
 from BaseModel import ShortCutNet
 from helper import init_gpu
 
@@ -21,8 +22,8 @@ init_gpu("0")
 
 # PATH
 path_test = './TestImage/'
-name_read = 'BlurryTest1.png'
-name_save = 'TestOutput.png'
+name_read = 'BlurryTest1.png'   #image to clarify
+name_save = 'TestOutput.png'    #name of clarified output
 path_weights = './ModelSave/DeblurSHC19ConvLayers.hdf5'
 
 # input image dimensions

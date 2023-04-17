@@ -9,7 +9,8 @@ Shortcut Network Model
 
 from keras.models import Model
 from keras.layers import Conv2D, BatchNormalization, Activation, Input
-from keras.layers.merge import add
+from keras.layers import add
+#from keras.layers.merge import add
 
 
 class ShortCutNet():
@@ -84,7 +85,7 @@ class ShortCutNet():
         self.padding = "same"
         shortcut = self._ConvBNRelu(layer_25by25)
 
-        for i in xrange(0, num_block):
+        for i in range(0, num_block):
             x = self._ConvBNRelu(shortcut)
             x = self._ConvBNRelu(x)
             x = self._ConvOnly(x)
@@ -116,7 +117,7 @@ class ShortCutNet():
         self.padding = "same"
         shortcut = self._ConvBNRelu(layer_25by25)
         x = self._ConvBNRelu(shortcut)
-        for i in xrange(0, num_block):
+        for i in range(0, num_block):
             x = self._ConvOnly(x)
             x = self._AddShortCut([x, shortcut])
 
